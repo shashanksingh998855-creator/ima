@@ -1,0 +1,6 @@
+{
+  "name": "STRYVEN - Influencer Marketing Agency",
+  "description": "STRYVEN connects premium brands with high-impact creators across beauty, tech, fashion, wellness, and consumer products. Your Brand. The Right Influence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

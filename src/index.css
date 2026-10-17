@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Sora', sans-serif;
+    --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+    --color-bg-deep: #05060f;
+    --color-accent-blue: #4f5bff;
+    --color-accent-glow: #6b7cff;
+    --color-accent-coral: #ff7a45;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #05060f;
+    color: #a9b0c8;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Background Grid of Hairlines with dots */
+.bg-deep-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glass panel with subtle border and inner hover glow */
+.glass-panel {
+  background: rgba(12, 15, 36, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(107, 124, 255, 0.35);
+  box-shadow: 0 0 25px rgba(79, 91, 255, 0.12), inset 0 0 20px rgba(107, 124, 255, 0.04);
+}
+
+/* Blue glow button */
+.btn-glow-blue {
+  background: linear-gradient(135deg, #4f5bff 0%, #6b7cff 100%);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(79, 91, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-blue:hover {
+  box-shadow: 0 0 32px rgba(107, 124, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+/* Keyframe animations for slow floating orb and streaks */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-subtle {
+    animation: none;
+  }
+}
